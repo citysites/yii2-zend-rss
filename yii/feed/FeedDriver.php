@@ -9,7 +9,6 @@ namespace yii\feed;
 
 use Yii;
 use yii\base\Component;
-use yii\base\ErrorException;
 use Zend\Feed\Writer\Feed;
 use Zend\Feed\Reader\Reader;
 
@@ -20,21 +19,25 @@ use Zend\Feed\Reader\Reader;
  */
 class FeedDriver extends Component
 {
-        /**
-         * Loads read Zend-feed component
-         * @return mixed object Zend\Feed\Reader component
-         */
-        public function reader(){
-            
-            return new Reader;
-        }
-        /**
-         * Loads read Zend-feed component
-         * @return mixed object Zend\Feed\Writer component
-         */
-        public function writer(){
-            
-            return new Feed;
-        }
+    /**
+     * Loads read Zend-feed component
+     * @return mixed object Zend\Feed\Reader component
+     */
+    public function reader()
+    {
+
+        return new Reader;
+    }
+
+    /**
+     * Loads read Zend-feed component
+     * @return mixed object Zend\Feed\Writer component
+     */
+    public function writer()
+    {
+
+        return new Feed;
+    }
 }
+
 ?>
