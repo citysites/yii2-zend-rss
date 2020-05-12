@@ -1,5 +1,5 @@
 {
-  "name": "shaposnikoff/yii2-zend-rss",
+  "name": "citysites/yii2-zend-rss",
   "description": "Yii2 Framework extension to provide functionality for consuming RSS and Atom feeds using zend-feed library.",
   "keywords": [
     "yii2",
@@ -8,7 +8,6 @@
     "atom",
     "feed"
   ],
-  "homepage": "https://github.com/shaposhnikov/yii2-zend-rss",
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "authors": [
