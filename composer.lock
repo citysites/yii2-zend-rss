@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3a69cd2998032066b28ffb12facd4c1",
+    "content-hash": "ed21b547e73333248ffbe634ecf1b5a1",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -135,50 +135,52 @@
         },
         {
             "name": "laminas/laminas-feed",
-            "version": "2.5.2",
+            "version": "2.19.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-feed.git",
-                "reference": "5671b71f5f62940082489162b095f0a99b4210f8"
+                "reference": "3afcac8ceaab855390170d795216ba9d3e1d54e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/5671b71f5f62940082489162b095f0a99b4210f8",
-                "reference": "5671b71f5f62940082489162b095f0a99b4210f8",
+                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/3afcac8ceaab855390170d795216ba9d3e1d54e7",
+                "reference": "3afcac8ceaab855390170d795216ba9d3e1d54e7",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-escaper": "~2.5",
-                "laminas/laminas-stdlib": "~2.5",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.5"
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "laminas/laminas-escaper": "^2.9",
+                "laminas/laminas-servicemanager": "^3.14.0",
+                "laminas/laminas-stdlib": "^3.6",
+                "php": "^7.4 || ~8.0.0 || ~8.1.0"
             },
-            "replace": {
-                "zendframework/zend-feed": "self.version"
+            "conflict": {
+                "laminas/laminas-servicemanager": "<3.3",
+                "zendframework/zend-feed": "*"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "1.7.*",
-                "laminas/laminas-cache": "~2.5",
-                "laminas/laminas-db": "~2.5",
-                "laminas/laminas-http": "~2.5",
-                "laminas/laminas-servicemanager": "~2.5",
-                "laminas/laminas-validator": "~2.5",
-                "phpunit/phpunit": "~4.0"
+                "laminas/laminas-cache": "^2.13.2 || ^3.1.3",
+                "laminas/laminas-cache-storage-adapter-memory": "^1.1.0 || ^2.0.0",
+                "laminas/laminas-coding-standard": "~2.4.0",
+                "laminas/laminas-db": "^2.13.3",
+                "laminas/laminas-http": "^2.15",
+                "laminas/laminas-validator": "^2.15",
+                "phpunit/phpunit": "^9.5.5",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "psr/http-message": "^1.0.1",
+                "vimeo/psalm": "^4.24.0"
             },
             "suggest": {
-                "laminas/laminas-cache": "Laminas\\Cache component",
-                "laminas/laminas-db": "Laminas\\Db component",
+                "laminas/laminas-cache": "Laminas\\Cache component, for optionally caching feeds between requests",
+                "laminas/laminas-db": "Laminas\\Db component, for use with PubSubHubbub",
                 "laminas/laminas-http": "Laminas\\Http for PubSubHubbub, and optionally for use with Laminas\\Feed\\Reader",
-                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component, for default/recommended ExtensionManager implementations",
-                "laminas/laminas-validator": "Laminas\\Validator component"
+                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component, for easily extending ExtensionManager implementations",
+                "laminas/laminas-validator": "Laminas\\Validator component, for validating email addresses used in Atom feeds and entries when using the Writer subcomponent",
+                "psr/http-message": "PSR-7 ^1.0.1, if you wish to use Laminas\\Feed\\Reader\\Http\\Psr7ResponseDecorator"
             },
+            "default-branch": true,
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev",
-                    "dev-develop": "2.6-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Feed\\": "src/"
@@ -188,11 +190,13 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "provides functionality for consuming RSS and Atom feeds",
+            "description": "provides functionality for creating and consuming RSS and Atom feeds",
             "homepage": "https://laminas.dev",
             "keywords": [
+                "atom",
                 "feed",
-                "laminas"
+                "laminas",
+                "rss"
             ],
             "support": {
                 "chat": "https://laminas.dev/chat",
@@ -202,45 +206,48 @@
                 "rss": "https://github.com/laminas/laminas-feed/releases.atom",
                 "source": "https://github.com/laminas/laminas-feed"
             },
-            "time": "2019-12-31T16:50:27+00:00"
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-10-02T01:24:33+00:00"
         },
         {
             "name": "laminas/laminas-http",
-            "version": "2.5.3",
+            "version": "2.17.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-http.git",
-                "reference": "6c064b0c91caf4726681cc56bbb29248eafb16da"
+                "reference": "7300482d3e570e81b6a6ecf6b28da1b12334bf63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-http/zipball/6c064b0c91caf4726681cc56bbb29248eafb16da",
-                "reference": "6c064b0c91caf4726681cc56bbb29248eafb16da",
+                "url": "https://api.github.com/repos/laminas/laminas-http/zipball/7300482d3e570e81b6a6ecf6b28da1b12334bf63",
+                "reference": "7300482d3e570e81b6a6ecf6b28da1b12334bf63",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-loader": "~2.5",
-                "laminas/laminas-stdlib": "~2.5",
-                "laminas/laminas-uri": "~2.5",
-                "laminas/laminas-validator": "~2.5",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.5"
+                "laminas/laminas-loader": "^2.8",
+                "laminas/laminas-stdlib": "^3.6",
+                "laminas/laminas-uri": "^2.9.1",
+                "laminas/laminas-validator": "^2.15",
+                "php": "^7.3 || ~8.0.0 || ~8.1.0"
             },
-            "replace": {
-                "zendframework/zend-http": "self.version"
+            "conflict": {
+                "zendframework/zend-http": "*"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "1.7.*",
-                "laminas/laminas-config": "~2.5",
-                "phpunit/phpunit": "~4.0"
+                "ext-curl": "*",
+                "laminas/laminas-coding-standard": "~2.2.1",
+                "phpunit/phpunit": "^9.5.5"
             },
+            "suggest": {
+                "paragonie/certainty": "For automated management of cacert.pem"
+            },
+            "default-branch": true,
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev",
-                    "dev-develop": "2.6-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Http\\": "src/"
@@ -250,10 +257,11 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "provides an easy interface for performing Hyper-Text Transfer Protocol (HTTP) requests",
+            "description": "Provides an easy interface for performing Hyper-Text Transfer Protocol (HTTP) requests",
             "homepage": "https://laminas.dev",
             "keywords": [
                 "http",
+                "http client",
                 "laminas"
             ],
             "support": {
@@ -264,75 +272,13 @@
                 "rss": "https://github.com/laminas/laminas-http/releases.atom",
                 "source": "https://github.com/laminas/laminas-http"
             },
-            "time": "2019-12-31T17:05:24+00:00"
-        },
-        {
-            "name": "laminas/laminas-hydrator",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-hydrator.git",
-                "reference": "acab29a3327a70be0a653d88906655b15de15517"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-hydrator/zipball/acab29a3327a70be0a653d88906655b15de15517",
-                "reference": "acab29a3327a70be0a653d88906655b15de15517",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-stdlib": "^2.5.1",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.5"
-            },
-            "replace": {
-                "zendframework/zend-hydrator": "self.version"
-            },
-            "require-dev": {
-                "laminas/laminas-eventmanager": "^2.5.1",
-                "laminas/laminas-filter": "^2.5.1",
-                "laminas/laminas-inputfilter": "^2.5.1",
-                "laminas/laminas-serializer": "^2.5.1",
-                "laminas/laminas-servicemanager": "^2.5.1",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "^2.0@dev"
-            },
-            "suggest": {
-                "laminas/laminas-eventmanager": "^2.5.1, to support aggregate hydrator usage",
-                "laminas/laminas-filter": "^2.5.1, to support naming strategy hydrator usage",
-                "laminas/laminas-serializer": "^2.5.1, to use the SerializableStrategy",
-                "laminas/laminas-servicemanager": "^2.5.1, to support hydrator plugin manager usage"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "1.1-dev"
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
                 }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\Hydrator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
             ],
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "hydrator",
-                "laminas"
-            ],
-            "support": {
-                "chat": "https://laminas.dev/chat",
-                "docs": "https://docs.laminas.dev/laminas-hydrator/",
-                "forum": "https://discourse.laminas.dev",
-                "issues": "https://github.com/laminas/laminas-hydrator/issues",
-                "rss": "https://github.com/laminas/laminas-hydrator/releases.atom",
-                "source": "https://github.com/laminas/laminas-hydrator"
-            },
-            "time": "2019-12-31T17:06:20+00:00"
+            "time": "2022-08-17T17:22:15+00:00"
         },
         {
             "name": "laminas/laminas-loader",
@@ -393,43 +339,60 @@
         },
         {
             "name": "laminas/laminas-servicemanager",
-            "version": "2.5.1",
+            "version": "3.18.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-servicemanager.git",
-                "reference": "0cb6ae6b3025f3db2b91ab1936c5e0247b4db485"
+                "reference": "4b2f3fbbc61fe9ed24432e5a05570ce1d1f6d09d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-servicemanager/zipball/0cb6ae6b3025f3db2b91ab1936c5e0247b4db485",
-                "reference": "0cb6ae6b3025f3db2b91ab1936c5e0247b4db485",
+                "url": "https://api.github.com/repos/laminas/laminas-servicemanager/zipball/4b2f3fbbc61fe9ed24432e5a05570ce1d1f6d09d",
+                "reference": "4b2f3fbbc61fe9ed24432e5a05570ce1d1f6d09d",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.3.23"
+                "laminas/laminas-stdlib": "^3.2.1",
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0",
+                "psr/container": "^1.0"
+            },
+            "conflict": {
+                "ext-psr": "*",
+                "laminas/laminas-code": "<3.3.1",
+                "zendframework/zend-code": "<3.3.1",
+                "zendframework/zend-servicemanager": "*"
+            },
+            "provide": {
+                "psr/container-implementation": "^1.0"
             },
             "replace": {
-                "zendframework/zend-servicemanager": "self.version"
+                "container-interop/container-interop": "^1.2.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "1.7.*",
-                "laminas/laminas-di": "~2.5",
-                "laminas/laminas-mvc": "~2.5",
-                "phpunit/phpunit": "~4.0"
+                "composer/package-versions-deprecated": "^1.0",
+                "laminas/laminas-coding-standard": "~2.4.0",
+                "laminas/laminas-container-config-test": "^0.7",
+                "laminas/laminas-dependency-plugin": "^2.1.2",
+                "mikey179/vfsstream": "^1.6.10@alpha",
+                "ocramius/proxy-manager": "^2.11",
+                "phpbench/phpbench": "^1.1",
+                "phpunit/phpunit": "^9.5.5",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "vimeo/psalm": "^4.8"
             },
             "suggest": {
-                "laminas/laminas-di": "Laminas\\Di component",
-                "ocramius/proxy-manager": "ProxyManager 0.5.* to handle lazy initialization of services"
+                "ocramius/proxy-manager": "ProxyManager ^2.1.1 to handle lazy initialization of services"
             },
+            "default-branch": true,
+            "bin": [
+                "bin/generate-deps-for-config-factory",
+                "bin/generate-factory-for-class"
+            ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev",
-                    "dev-develop": "2.6-dev"
-                }
-            },
             "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ],
                 "psr-4": {
                     "Laminas\\ServiceManager\\": "src/"
                 }
@@ -438,9 +401,15 @@
             "license": [
                 "BSD-3-Clause"
             ],
+            "description": "Factory-Driven Dependency Injection Container",
             "homepage": "https://laminas.dev",
             "keywords": [
+                "PSR-11",
+                "dependency-injection",
+                "di",
+                "dic",
                 "laminas",
+                "service-manager",
                 "servicemanager"
             ],
             "support": {
@@ -451,54 +420,43 @@
                 "rss": "https://github.com/laminas/laminas-servicemanager/releases.atom",
                 "source": "https://github.com/laminas/laminas-servicemanager"
             },
-            "time": "2019-12-31T17:44:09+00:00"
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-10-02T01:14:04+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
-            "version": "2.7.4",
+            "version": "3.14.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-stdlib.git",
-                "reference": "b69e2741673daabdf720bc76668448ceb1e4c537"
+                "reference": "7e5bbbd9c15bbd99248c2321224a099e2fb6af70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/b69e2741673daabdf720bc76668448ceb1e4c537",
-                "reference": "b69e2741673daabdf720bc76668448ceb1e4c537",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/7e5bbbd9c15bbd99248c2321224a099e2fb6af70",
+                "reference": "7e5bbbd9c15bbd99248c2321224a099e2fb6af70",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-hydrator": "~1.0",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.5"
+                "php": "^7.4 || ~8.0.0 || ~8.1.0"
             },
-            "replace": {
-                "zendframework/zend-stdlib": "self.version"
+            "conflict": {
+                "zendframework/zend-stdlib": "*"
             },
             "require-dev": {
-                "athletic/athletic": "~0.1",
-                "fabpot/php-cs-fixer": "1.7.*",
-                "laminas/laminas-config": "~2.5",
-                "laminas/laminas-eventmanager": "~2.5",
-                "laminas/laminas-filter": "~2.5",
-                "laminas/laminas-inputfilter": "~2.5",
-                "laminas/laminas-serializer": "~2.5",
-                "laminas/laminas-servicemanager": "~2.5",
-                "phpunit/phpunit": "~4.0"
+                "laminas/laminas-coding-standard": "^2.4.0",
+                "phpbench/phpbench": "^1.2.6",
+                "phpunit/phpunit": "^9.5.23",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "vimeo/psalm": "^4.26"
             },
-            "suggest": {
-                "laminas/laminas-eventmanager": "To support aggregate hydrator usage",
-                "laminas/laminas-filter": "To support naming strategy hydrator usage",
-                "laminas/laminas-serializer": "Laminas\\Serializer component",
-                "laminas/laminas-servicemanager": "To support hydrator plugin manager usage"
-            },
+            "default-branch": true,
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.7-dev",
-                    "dev-develop": "2.8-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Stdlib\\": "src/"
@@ -508,6 +466,7 @@
             "license": [
                 "BSD-3-Clause"
             ],
+            "description": "SPL extensions, array utilities, error handlers, and more",
             "homepage": "https://laminas.dev",
             "keywords": [
                 "laminas",
@@ -521,42 +480,42 @@
                 "rss": "https://github.com/laminas/laminas-stdlib/releases.atom",
                 "source": "https://github.com/laminas/laminas-stdlib"
             },
-            "time": "2019-12-31T17:51:00+00:00"
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-10-02T00:55:46+00:00"
         },
         {
             "name": "laminas/laminas-uri",
-            "version": "2.5.1",
+            "version": "2.10.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-uri.git",
-                "reference": "b6169363b417da3b7047f96897b357dd4fbfd9af"
+                "reference": "b553be02ac95ffe9c1a503a9ed20d863c64b00d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-uri/zipball/b6169363b417da3b7047f96897b357dd4fbfd9af",
-                "reference": "b6169363b417da3b7047f96897b357dd4fbfd9af",
+                "url": "https://api.github.com/repos/laminas/laminas-uri/zipball/b553be02ac95ffe9c1a503a9ed20d863c64b00d1",
+                "reference": "b553be02ac95ffe9c1a503a9ed20d863c64b00d1",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-escaper": "~2.5",
-                "laminas/laminas-validator": "~2.5",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.3.23"
+                "laminas/laminas-escaper": "^2.9",
+                "laminas/laminas-validator": "^2.15",
+                "php": "^7.3 || ~8.0.0 || ~8.1.0"
             },
-            "replace": {
-                "zendframework/zend-uri": "self.version"
+            "conflict": {
+                "zendframework/zend-uri": "*"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "1.7.*",
-                "phpunit/phpunit": "~4.0"
+                "laminas/laminas-coding-standard": "~2.2.1",
+                "phpunit/phpunit": "^9.5.5"
             },
+            "default-branch": true,
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev",
-                    "dev-develop": "2.6-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Uri\\": "src/"
@@ -566,7 +525,7 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "a component that aids in manipulating and validating » Uniform Resource Identifiers (URIs)",
+            "description": "A component that aids in manipulating and validating » Uniform Resource Identifiers (URIs)",
             "homepage": "https://laminas.dev",
             "keywords": [
                 "laminas",
@@ -580,59 +539,67 @@
                 "rss": "https://github.com/laminas/laminas-uri/releases.atom",
                 "source": "https://github.com/laminas/laminas-uri"
             },
-            "time": "2019-12-31T17:55:55+00:00"
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-03-08T15:58:39+00:00"
         },
         {
             "name": "laminas/laminas-validator",
-            "version": "2.5.3",
+            "version": "2.26.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-validator.git",
-                "reference": "981d9fd36af10796828119cff884af867f69bef8"
+                "reference": "b65e65b1ccacdd9181fb65ea4c0e53eb88175a43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/981d9fd36af10796828119cff884af867f69bef8",
-                "reference": "981d9fd36af10796828119cff884af867f69bef8",
+                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/b65e65b1ccacdd9181fb65ea4c0e53eb88175a43",
+                "reference": "b65e65b1ccacdd9181fb65ea4c0e53eb88175a43",
                 "shasum": ""
             },
             "require": {
-                "laminas/laminas-stdlib": "~2.5",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": ">=5.5"
+                "laminas/laminas-servicemanager": "^3.12.0",
+                "laminas/laminas-stdlib": "^3.13",
+                "php": "^7.4 || ~8.0.0 || ~8.1.0"
             },
-            "replace": {
-                "zendframework/zend-validator": "self.version"
+            "conflict": {
+                "zendframework/zend-validator": "*"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "1.7.*",
-                "laminas/laminas-cache": "~2.5",
-                "laminas/laminas-config": "~2.5",
-                "laminas/laminas-db": "~2.5",
-                "laminas/laminas-filter": "~2.5",
-                "laminas/laminas-http": "~2.5",
-                "laminas/laminas-i18n": "~2.5",
-                "laminas/laminas-math": "~2.5",
-                "laminas/laminas-servicemanager": "~2.5",
-                "laminas/laminas-session": "~2.5",
-                "laminas/laminas-uri": "~2.5",
-                "phpunit/phpunit": "~4.0"
+                "laminas/laminas-coding-standard": "^2.4.0",
+                "laminas/laminas-db": "^2.15.0",
+                "laminas/laminas-filter": "^2.18.0",
+                "laminas/laminas-http": "^2.16.0",
+                "laminas/laminas-i18n": "^2.17.0",
+                "laminas/laminas-session": "^2.13.0",
+                "laminas/laminas-uri": "^2.9.1",
+                "phpunit/phpunit": "^9.5.24",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0",
+                "vimeo/psalm": "^4.27.0"
             },
             "suggest": {
-                "laminas/laminas-db": "Laminas\\Db component",
+                "laminas/laminas-db": "Laminas\\Db component, required by the (No)RecordExists validator",
                 "laminas/laminas-filter": "Laminas\\Filter component, required by the Digits validator",
-                "laminas/laminas-i18n": "Laminas\\I18n component to allow translation of validation error messages as well as to use the various Date validators",
+                "laminas/laminas-i18n": "Laminas\\I18n component to allow translation of validation error messages",
                 "laminas/laminas-i18n-resources": "Translations of validator messages",
-                "laminas/laminas-math": "Laminas\\Math component",
                 "laminas/laminas-servicemanager": "Laminas\\ServiceManager component to allow using the ValidatorPluginManager and validator chains",
-                "laminas/laminas-session": "Laminas\\Session component",
-                "laminas/laminas-uri": "Laminas\\Uri component, required by the Uri and Sitemap\\Loc validators"
+                "laminas/laminas-session": "Laminas\\Session component, ^2.8; required by the Csrf validator",
+                "laminas/laminas-uri": "Laminas\\Uri component, required by the Uri and Sitemap\\Loc validators",
+                "psr/http-message": "psr/http-message, required when validating PSR-7 UploadedFileInterface instances via the Upload and UploadFile validators"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev",
-                    "dev-develop": "2.6-dev"
+                "laminas": {
+                    "component": "Laminas\\Validator",
+                    "config-provider": "Laminas\\Validator\\ConfigProvider"
                 }
             },
             "autoload": {
@@ -644,7 +611,7 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "provides a set of commonly needed validators",
+            "description": "Validation classes for a wide range of domains, and the ability to chain validators to create complex validation criteria",
             "homepage": "https://laminas.dev",
             "keywords": [
                 "laminas",
@@ -658,70 +625,61 @@
                 "rss": "https://github.com/laminas/laminas-validator/releases.atom",
                 "source": "https://github.com/laminas/laminas-validator"
             },
-            "time": "2019-12-31T18:01:06+00:00"
-        },
-        {
-            "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.7.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "af6431ab60ebaad70d70934c29a945706296a66d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/af6431ab60ebaad70d70934c29a945706296a66d",
-                "reference": "af6431ab60ebaad70d70934c29a945706296a66d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4, <8.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5.14",
-                "psalm/plugin-phpunit": "^0.17.0",
-                "squizlabs/php_codesniffer": "^3.6.2",
-                "vimeo/psalm": "^4.21.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laminas": {
-                    "module": "Laminas\\ZendFrameworkBridge"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/autoload.php"
-                ],
-                "psr-4": {
-                    "Laminas\\ZendFrameworkBridge\\": "src//"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Alias legacy ZF class names to Laminas Project equivalents.",
-            "keywords": [
-                "ZendFramework",
-                "autoloading",
-                "laminas",
-                "zf"
-            ],
-            "support": {
-                "forum": "https://discourse.laminas.dev/",
-                "issues": "https://github.com/laminas/laminas-zendframework-bridge/issues",
-                "rss": "https://github.com/laminas/laminas-zendframework-bridge/releases.atom",
-                "source": "https://github.com/laminas/laminas-zendframework-bridge"
-            },
             "funding": [
                 {
                     "url": "https://funding.communitybridge.org/projects/laminas-project",
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-10-01T00:49:31+00:00"
+            "time": "2022-10-03T20:09:30+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/1.1.2"
+            },
+            "time": "2021-11-05T16:50:12+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1070,15 +1028,11 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "laminas/laminas-feed": 20,
-        "laminas/laminas-servicemanager": 20,
-        "laminas/laminas-http": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": ">=5.4.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
