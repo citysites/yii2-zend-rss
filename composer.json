@@ -19,14 +19,19 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": "~2.0.6",
-    "zendframework/zend-feed": "2.5.*@dev",
-    "zendframework/zend-servicemanager": "2.5.*@dev",
-    "zendframework/zend-http": "2.5.*@dev"
+    "yiisoft/yii2": "^2.0",
+    "laminas/laminas-feed": "2.5.*@dev",
+    "laminas/laminas-servicemanager": "2.5.*@dev",
+    "laminas/laminas-http": "2.5.*@dev"
   },
   "autoload": {
     "psr-0": {
       "yii\\feed\\": ""
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
     }
   }
 }
